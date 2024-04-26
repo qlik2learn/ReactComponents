@@ -1,0 +1,47 @@
+.container_icon {
+  display: flex;
+}
+
+.item {
+  list-style: none;
+}
+
+.item a {
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 3px solid transparent; 
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; 
+}
+
+.item a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transform: scale(10);
+  transform-origin: bottom;
+  transition: transform 0.5s ease, background 0.5s ease; 
+}
+
+.item:hover a::before {
+  transform: scale(1, 1);
+  background: var(--hover-bg-color); 
+}
+
+.icon {
+  font-size: 2rem;
+  color: hsl(203, 92%, 8%);
+  transition: 0.5s ease;
+}
+
+.item a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
